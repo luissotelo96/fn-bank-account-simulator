@@ -23,6 +23,9 @@ namespace FnBankAccountSimulation
             _customerService = customerService;
         }
 
+        /*
+         * Obtener la lista de los tipo persona existentes (Persona, Empresarial)
+         */
         [FunctionName("GetCustomerTypes")]
         public async Task<IActionResult> GetCustomerTypes(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
@@ -39,6 +42,9 @@ namespace FnBankAccountSimulation
             }
         }
 
+        /*
+         * Función encargada de crear un cliente
+         */
         [FunctionName("CreateCustomer")]
         public async Task<IActionResult> CreateCustomer(
            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
@@ -62,6 +68,9 @@ namespace FnBankAccountSimulation
             }
         }
 
+        /*
+         * Obtener cliente por su id
+         */
         [FunctionName("GetCustomerById")]
         public async Task<IActionResult> GetCustomerById(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
@@ -82,6 +91,9 @@ namespace FnBankAccountSimulation
             }
         }
 
+        /*
+         * Obtener todos los clientes
+         */
         [FunctionName("GetCustomers")]
         public async Task<IActionResult> GetCustomers(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = "GetCustomers")] HttpRequest req,
@@ -98,6 +110,9 @@ namespace FnBankAccountSimulation
             }
         }
 
+        /*
+         * Obtener información del cliente por su número de documento
+         */
         [FunctionName("GetCustomerByDocumentNumber")]
         public async Task<IActionResult> GetCustomerByDocumentNumber(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,

@@ -23,6 +23,9 @@ namespace FnBankAccountSimulation
             _financialProductService = financialProductService;
         }
 
+        /* 
+         * Función encargada de devolver la lista de los tipo de productos existentes (Cuenta de ahorros, corriente, CDT).
+         */
         [FunctionName("GetProductTypes")]
         public async Task<IActionResult> GetProductTypes(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
@@ -39,6 +42,9 @@ namespace FnBankAccountSimulation
             }
         }
 
+        /*
+         * Función encargada de crear productos
+         */
         [FunctionName("CreateFinancialProduct")]
         public async Task<IActionResult> CreateFinancialProduct(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
@@ -62,6 +68,9 @@ namespace FnBankAccountSimulation
             }
         }
 
+        /* 
+         * Depositar dinero 
+         */
         [FunctionName("DepositMoney")]
         public async Task<IActionResult> DepositMoney(
            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
@@ -87,6 +96,9 @@ namespace FnBankAccountSimulation
             }
         }
 
+        /* 
+         * Obtener el saldo promedio según el tipo de producto.
+         */
         [FunctionName("GetAverageBalanceByProductTypeId")]
         public async Task<IActionResult> GetAverageBalanceByProductTypeId(
           [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
@@ -107,6 +119,10 @@ namespace FnBankAccountSimulation
             }
         }
 
+        /*
+         * 
+         * Obtener los productos de un cliente
+         */
         [FunctionName("GetFinancialProductsByCustomerID")]
         public async Task<IActionResult> GetFinancialProductsByCustomerID(
           [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
@@ -127,6 +143,9 @@ namespace FnBankAccountSimulation
             }
         }
 
+        /*
+         * Obtener el TOP 10 saldo en clientes por tipo producto
+         */
         [FunctionName("GetTopBalanceCustomers")]
         public async Task<IActionResult> GetTopBalanceCustomers(
          [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
@@ -147,6 +166,9 @@ namespace FnBankAccountSimulation
             }
         }
 
+        /*
+         * Retirar dinero 
+         */
         [FunctionName("WithdrawMoney")]
         public async Task<IActionResult> WithdrawMoney(
           [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
@@ -172,6 +194,9 @@ namespace FnBankAccountSimulation
             }
         }
 
+        /* 
+         * Obtener los movimiento de un producto
+         */
         [FunctionName("GetFinancialMovementsByFinancialProductId")]
         public async Task<IActionResult> GetFinancialMovementsByFinancialProductId(
          [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
@@ -192,6 +217,9 @@ namespace FnBankAccountSimulation
             }
         }
 
+        /* 
+         *  Cancelar producto
+         */
         [FunctionName("CancelProduct")]
         public async Task<IActionResult> CancelProduct(
         [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,

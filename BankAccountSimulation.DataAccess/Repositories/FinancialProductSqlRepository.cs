@@ -45,7 +45,7 @@ namespace BankAccountSimulation.DataAccess.Repositories
                         Balance = financialProductAhorros.Balance
                     };
 
-                    _dbContext.FinancialMovements.Add(financialMovementEntity);                   
+                    _dbContext.FinancialMovements.Add(financialMovementEntity);
                     await _dbContext.SaveChangesAsync();
 
                     // Se crea un movimiento negativo para la cuenta CDT
@@ -130,6 +130,9 @@ namespace BankAccountSimulation.DataAccess.Repositories
             }
         }
 
+        /*
+         * Para este método se hace un llamado a un procedimiento almacenado en la base de datos, por nombre [dbo].[spGetAverageBalanceByProductTypeID]
+         */
         public async Task<List<AverageBalanceTable>> GetAverageBalanceByProductTypeId(int productTypeId)
         {
             SqlParameter productTypeIdParam = new SqlParameter() { ParameterName = "@ProductTypeID", Value = productTypeId };
@@ -217,6 +220,9 @@ namespace BankAccountSimulation.DataAccess.Repositories
                             }).ToListAsync();
         }
 
+        /*
+         * Para este método se hace un llamado a un procedimiento almacenado en la base de datos, por nombre [dbo].[spGetTopBalanceCustomers]
+         */
         public async Task<List<TopBalanceCustomersTable>> GetTopBalanceCustomers(int productTypeId)
         {
             SqlParameter productTypeIdParam = new SqlParameter() { ParameterName = "@ProductTypeID", Value = productTypeId };

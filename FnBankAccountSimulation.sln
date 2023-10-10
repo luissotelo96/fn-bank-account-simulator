@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankAccountSimulation.Domai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankAccountSimulation.DataAccess", "BankAccountSimulation.DataAccess\BankAccountSimulation.DataAccess.csproj", "{33AA05F6-E74D-4DC4-B7C8-AFF273F23425}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccountSimulator.DataAccess.Test", "BankAccountSimulator.DataAccess.Test\BankAccountSimulator.DataAccess.Test.csproj", "{376B27D1-4BBE-49C2-8C89-FBB82CBC384B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{33AA05F6-E74D-4DC4-B7C8-AFF273F23425}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33AA05F6-E74D-4DC4-B7C8-AFF273F23425}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33AA05F6-E74D-4DC4-B7C8-AFF273F23425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{376B27D1-4BBE-49C2-8C89-FBB82CBC384B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{376B27D1-4BBE-49C2-8C89-FBB82CBC384B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{376B27D1-4BBE-49C2-8C89-FBB82CBC384B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{376B27D1-4BBE-49C2-8C89-FBB82CBC384B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{0D5144B8-AABB-48F4-953E-6D25E53C83B0} = {6F58B17F-3C7F-472C-88FD-7766CA277CD6}
 		{19523F60-6174-4954-9A3B-9298482C9AFC} = {CA8A40B1-F249-46A8-B653-0A1442B22D11}
 		{33AA05F6-E74D-4DC4-B7C8-AFF273F23425} = {DDBBE691-30EA-4C45-9E61-B1A9F52ABABA}
+		{376B27D1-4BBE-49C2-8C89-FBB82CBC384B} = {DDBBE691-30EA-4C45-9E61-B1A9F52ABABA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7824DFA2-783C-4470-92AA-BBCAAC1BD78F}
