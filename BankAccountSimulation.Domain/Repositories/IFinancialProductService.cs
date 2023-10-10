@@ -9,8 +9,8 @@ namespace BankAccountSimulation.Domain.Repositories
         Task<List<FinancialProductDTO>> GetFinancialProductsByCustomerID(int customerId);
         Task<int> WithdrawMoney(int financialProductId, decimal value);
         Task<int> DepositMoney(int financialProductId, decimal value);
-        Task<List<AverageBalanceTable>> GetAverageBalanceByCustomer(string documentNumber);
-        Task<List<TopBalanceCustomersTable>> GetTopBalanceCustomers();
+        Task<List<AverageBalanceTable>> GetAverageBalanceByProductTypeId(int productTypeId);
+        Task<List<TopBalanceCustomersTable>> GetTopBalanceCustomers(int productTypeId);
         Task<FinancialProductDTO> GetFinancialMovementsByFinancialProductId(int financialProductId);
         Task<int> CancelProduct(int financialProductId);
     }

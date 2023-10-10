@@ -87,8 +87,8 @@ namespace FnBankAccountSimulation
             }
         }
 
-        [FunctionName("GetAverageBalanceByCustomer")]
-        public async Task<IActionResult> GetAverageBalanceByCustomer(
+        [FunctionName("GetAverageBalanceByProductTypeId")]
+        public async Task<IActionResult> GetAverageBalanceByProductTypeId(
           [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
           ILogger log)
         {
@@ -96,9 +96,9 @@ namespace FnBankAccountSimulation
             {
                 string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
                 var jsonData = JsonConvert.DeserializeObject<JObject>(requestBody);
-                string documentNumber = jsonData.GetValue("documentNumber").Value<string>();
+                int productTypeId = jsonData.GetValue("productTypeId").Value<int>();
 
-                List<AverageBalanceTable> result = await _financialProductService.GetAverageBalanceByCustomer(documentNumber);
+                List<AverageBalanceTable> result = await _financialProductService.GetAverageBalanceByProductTypeId(productTypeId);
                 return new OkObjectResult(new Result<List<AverageBalanceTable>> { IsSuccess = true, Message = "Operación exitosa", Data = result });
             }
             catch (Exception ex)
@@ -134,8 +134,11 @@ namespace FnBankAccountSimulation
         {
             try
             {
+                string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+                var jsonData = JsonConvert.DeserializeObject<JObject>(requestBody);
+                int productTypeId = jsonData.GetValue("productTypeId").Value<int>();
 
-                List<TopBalanceCustomersTable> result = await _financialProductService.GetTopBalanceCustomers();
+                List<TopBalanceCustomersTable> result = await _financialProductService.GetTopBalanceCustomers(productTypeId);
                 return new OkObjectResult(new Result<List<TopBalanceCustomersTable>> { IsSuccess = true, Message = "Operación exitosa", Data = result });
             }
             catch (Exception ex)

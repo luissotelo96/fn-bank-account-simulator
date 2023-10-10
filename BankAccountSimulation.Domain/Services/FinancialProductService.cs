@@ -27,9 +27,9 @@ namespace BankAccountSimulation.Domain.Services
             return await _financialProductRepository.DepositMoney(financialProductId, value);
         }
 
-        public async Task<List<AverageBalanceTable>> GetAverageBalanceByCustomer(string documentNumber)
+        public async Task<List<AverageBalanceTable>> GetAverageBalanceByProductTypeId(int productTypeId)
         {
-            return await _financialProductRepository.GetAverageBalanceByCustomer(documentNumber);
+            return await _financialProductRepository.GetAverageBalanceByProductTypeId(productTypeId);
         }
 
         public async Task<FinancialProductDTO> GetFinancialMovementsByFinancialProductId(int financialProductId)
@@ -47,9 +47,9 @@ namespace BankAccountSimulation.Domain.Services
             return await _financialProductRepository.GetProductTypes();
         }
 
-        public async Task<List<TopBalanceCustomersTable>> GetTopBalanceCustomers()
+        public async Task<List<TopBalanceCustomersTable>> GetTopBalanceCustomers(int productTypeId)
         {
-            return await _financialProductRepository.GetTopBalanceCustomers();
+            return await _financialProductRepository.GetTopBalanceCustomers(productTypeId);
         }
 
         public async Task<int> WithdrawMoney(int financialProductId, decimal value)

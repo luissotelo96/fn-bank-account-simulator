@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "SQLConnectionString": "Server=(local)\\SQLEXPRESS;Database=db-bank-account-simulator;Trusted_Connection=True;MultipleActiveResultSets=true"
+  },
+  "Host": {
+    "LocalHttpPort": 7284,
+    "CORS": "*"
+  }
+}

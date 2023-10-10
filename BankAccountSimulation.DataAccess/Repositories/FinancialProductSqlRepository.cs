@@ -2,6 +2,7 @@
 using BankAccountSimulation.Domain.DTO;
 using BankAccountSimulation.Domain.Entities;
 using BankAccountSimulation.Domain.Repositories;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace BankAccountSimulation.DataAccess.Repositories
@@ -28,11 +29,43 @@ namespace BankAccountSimulation.DataAccess.Repositories
                                                         .FirstOrDefaultAsync();
                 if (financialProductAhorros != null)
                 {
+                    // El monto e interés de la cuenta CDT pasa a la cuenta de ahorros. 
                     financialProductAhorros.Balance += financialProductBd.Balance;
                     financialProductAhorros.MontlyInterest += financialProductBd.MontlyInterest;
-                    financialProductBd.State = false;
-
                     await _dbContext.SaveChangesAsync();
+
+                    // Se crea un movimento positivo para la cuenta de ahorros
+                    var financialMovementEntity = new FinancialMovements()
+                    {
+                        FinancialProductID = financialProductAhorros.FinancialProductID,
+                        CustomerID = financialProductAhorros.CustomerID,
+                        MovementDate = DateTime.Now,
+                        MovementType = "+",
+                        Value = financialProductBd.Balance,
+                        Balance = financialProductAhorros.Balance
+                    };
+
+                    _dbContext.FinancialMovements.Add(financialMovementEntity);                   
+                    await _dbContext.SaveChangesAsync();
+
+                    // Se crea un movimiento negativo para la cuenta CDT
+                    financialMovementEntity = new FinancialMovements()
+                    {
+                        FinancialProductID = financialProductBd.FinancialProductID,
+                        CustomerID = financialProductBd.CustomerID,
+                        MovementDate = DateTime.Now,
+                        MovementType = "-",
+                        Value = financialProductBd.Balance,
+                        Balance = 0
+                    };
+                    _dbContext.FinancialMovements.Add(financialMovementEntity);
+                    await _dbContext.SaveChangesAsync();
+
+                    // Se inactiva la cuenta CDT
+                    financialProductBd.State = false;
+                    await _dbContext.SaveChangesAsync();
+
+
                     return 1;
                 }
                 else
@@ -97,9 +130,12 @@ namespace BankAccountSimulation.DataAccess.Repositories
             }
         }
 
-        public Task<List<AverageBalanceTable>> GetAverageBalanceByCustomer(string documentNumber)
+        public async Task<List<AverageBalanceTable>> GetAverageBalanceByProductTypeId(int productTypeId)
         {
-            throw new NotImplementedException();
+            SqlParameter productTypeIdParam = new SqlParameter() { ParameterName = "@ProductTypeID", Value = productTypeId };
+            List<AverageBalanceTable> storeProcedureResult = await _dbContext.AverageBalanceTable.FromSqlRaw("exec [dbo].[spGetAverageBalanceByProductTypeID] @ProductTypeID ", productTypeIdParam).ToListAsync();
+
+            return storeProcedureResult;
         }
 
         public async Task<FinancialProductDTO> GetFinancialMovementsByFinancialProductId(int financialProductId)
@@ -181,9 +217,12 @@ namespace BankAccountSimulation.DataAccess.Repositories
                             }).ToListAsync();
         }
 
-        public Task<List<TopBalanceCustomersTable>> GetTopBalanceCustomers()
+        public async Task<List<TopBalanceCustomersTable>> GetTopBalanceCustomers(int productTypeId)
         {
-            throw new NotImplementedException();
+            SqlParameter productTypeIdParam = new SqlParameter() { ParameterName = "@ProductTypeID", Value = productTypeId };
+            List<TopBalanceCustomersTable> storeProcedureResult = await _dbContext.TopBalanceCustomersTable.FromSqlRaw("exec [dbo].[spGetTopBalanceCustomers] @ProductTypeID ", productTypeIdParam).ToListAsync();
+
+            return storeProcedureResult;
         }
 
         public async Task<int> WithdrawMoney(int financialProductId, decimal value)

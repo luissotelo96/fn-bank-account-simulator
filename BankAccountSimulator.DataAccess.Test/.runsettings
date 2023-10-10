@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+	<RunConfiguration>
+		<EnvironmentVariables>
+			<SQLConnectionString>Server=(local)\\SQLEXPRESS;Database=db-bank-account-simulator;Trusted_Connection=True;MultipleActiveResultSets=true</SQLConnectionString>
+		</EnvironmentVariables>
+	</RunConfiguration>
+</RunSettings>
