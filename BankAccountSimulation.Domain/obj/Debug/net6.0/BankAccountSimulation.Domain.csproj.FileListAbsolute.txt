@@ -1,0 +1,11 @@
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.Domain\bin\Debug\net6.0\BankAccountSimulation.Domain.deps.json
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.Domain\bin\Debug\net6.0\BankAccountSimulation.Domain.dll
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.Domain\bin\Debug\net6.0\BankAccountSimulation.Domain.pdb
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.Domain\obj\Debug\net6.0\BankAccountSimulation.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.Domain\obj\Debug\net6.0\BankAccountSimulation.Domain.AssemblyInfoInputs.cache
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.Domain\obj\Debug\net6.0\BankAccountSimulation.Domain.AssemblyInfo.cs
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.Domain\obj\Debug\net6.0\BankAccountSimulation.Domain.csproj.CoreCompileInputs.cache
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.Domain\obj\Debug\net6.0\BankAccountSimulation.Domain.dll
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.Domain\obj\Debug\net6.0\refint\BankAccountSimulation.Domain.dll
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.Domain\obj\Debug\net6.0\BankAccountSimulation.Domain.pdb
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.Domain\obj\Debug\net6.0\ref\BankAccountSimulation.Domain.dll

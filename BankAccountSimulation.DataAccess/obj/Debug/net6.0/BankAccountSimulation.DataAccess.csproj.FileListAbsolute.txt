@@ -1,0 +1,15 @@
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\bin\Debug\net6.0\BankAccountSimulation.DataAccess.deps.json
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\bin\Debug\net6.0\BankAccountSimulation.DataAccess.dll
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\bin\Debug\net6.0\BankAccountSimulation.DataAccess.pdb
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\bin\Debug\net6.0\BankAccountSimulation.Domain.dll
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\bin\Debug\net6.0\BankAccountSimulation.Domain.pdb
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\obj\Debug\net6.0\BankAccountSimulation.DataAccess.csproj.AssemblyReference.cache
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\obj\Debug\net6.0\BankAccountSimulation.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\obj\Debug\net6.0\BankAccountSimulation.DataAccess.AssemblyInfoInputs.cache
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\obj\Debug\net6.0\BankAccountSimulation.DataAccess.AssemblyInfo.cs
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\obj\Debug\net6.0\BankAccountSimulation.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\obj\Debug\net6.0\BankAccountSimulation.DataAccess.csproj.CopyComplete
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\obj\Debug\net6.0\BankAccountSimulation.DataAccess.dll
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\obj\Debug\net6.0\refint\BankAccountSimulation.DataAccess.dll
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\obj\Debug\net6.0\BankAccountSimulation.DataAccess.pdb
+C:\Users\luisa\source\repos\FnBankAccountSimulation\BankAccountSimulation.DataAccess\obj\Debug\net6.0\ref\BankAccountSimulation.DataAccess.dll
